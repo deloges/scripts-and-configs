@@ -26,12 +26,13 @@ EOF
 #
 #   /dev/urandom  ... Special file that gives random binary data
 #   od            ... Octal dump. Can be used for decimal too
-#   -An           ... not print addresses or extra formatting
-#   -N2           ... read 2 bytes (enough for a 16-bit number, i.e., max 65535)
-#   -tu2          ... output as an unsigned 2-byte decimal
+#       -An       ... not print addresses or extra formatting
+#       -N2       ... read 2 bytes (enough for a 16-bit number, i.e., max 65535)
+#       -tu2      ... output as an unsigned 2-byte decimal
 #   tr            ... removes all spaces (useful because od pads output)
 #
 rand=$(od -An -N2 -tu2 /dev/urandom | tr -d ' ')
+
 total=$(printf "%s" "$valid_files" | wc -l)
 line=$(( rand % total + 1 ))
 
