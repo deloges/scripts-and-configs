@@ -23,6 +23,7 @@ for file in *; do
     *)    continue ;;
   esac
 
+  # TODO: This produces lots of sub-shells/processes. 
   # Remove leading special characters.
   cleaned=$(printf "%s" "$base" | sed 's/^[^a-zA-Z0-9]\+//')
   # Remove trailing special characters.
