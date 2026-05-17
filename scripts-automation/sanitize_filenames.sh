@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# USAGE   ... Sanitizes all filenames in the current working directory by 
+# USAGE   ... Sanitizes filenames in the current working directory by 
 #             converting special characters/spaces to underscores.
 
 for file in *; do
@@ -16,7 +16,7 @@ for file in *; do
   #                       - that doesn't fit the list of extentions
   # When adding an extention, make sure the upper-case version is included. (Vim: gUU)
   case "$file" in
-    *.txt|*.md|*.pdf|*.mp3|*.mp4|*.png|*.jpg|*.jpeg|*.webp|*.gif|*.avi|*.flv|*.mkv|*.mpg|*.mpeg|*.mov|*.wmv|*.TXT|*.MD|*.PDF|*.MP3|*.MP4|*.PNG|*.JPG|*.JPEG|*.WEBP|*.GIF|*.AVI|*.FLV|*.MKV|*.MPG|*.MPEG|*.MOV|*.WMV)
+    *.txt|*.md|*.pdf|*.mp3|*.mp4|*.png|*.jpg|*.jpeg)
           base="${file%.*}"
           ext="${file##*.}"
           ;;
